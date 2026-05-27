@@ -1,0 +1,13 @@
+name = "my-tunnel-worker"
+main = "src/index.js"
+compatibility_date = "2024-05-27"
+
+# This intercepts traffic hitting your secure path
+routes = [
+  { pattern = "tunnel.jeffdemuth.cc/secure*", zone_name = "jeffdemuth.cc" }
+]
+
+# This binds your R2 bucket to the Worker
+[[r2_buckets]]
+binding = "FLAG_BUCKET"
+bucket_name = "jeffdemuthflags"
